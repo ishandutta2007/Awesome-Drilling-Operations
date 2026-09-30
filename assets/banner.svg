@@ -9,18 +9,13 @@
 
     <!-- Grid Pattern -->
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 212, 255, 0.07)" stroke-width="1"/>
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00d4ff" stroke-opacity="0.07" stroke-width="1"/>
     </pattern>
 
     <!-- Glowing Accent Gradient -->
     <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.8"/>
       <stop offset="100%" stop-color="#0055ff" stop-opacity="0.2"/>
-    </linearGradient>
-
-    <linearGradient id="orange-glow" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ff9900" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#ff5500" stop-opacity="0.3"/>
     </linearGradient>
 
     <!-- Subtle Glow Filter -->
@@ -31,11 +26,11 @@
   </defs>
 
   <style>
-    .title { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 46px; fill: #ffffff; letter-spacing: -0.5px; }
-    .subtitle { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 20px; fill: #a0aec0; letter-spacing: 0.2px; }
-    .tag { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 13px; fill: #00d4ff; letter-spacing: 1px; }
+    .title { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 42px; fill: #ffffff; }
+    .subtitle { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 18px; fill: #a0aec0; }
+    .tag { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 13px; fill: #00d4ff; }
     
-    /* Subtle Dynamic Animations in background */
+    /* Subtle Animations */
     @keyframes pulse-wave {
       0% { stroke-dashoffset: 1000; opacity: 0.3; }
       50% { opacity: 0.8; }
@@ -48,12 +43,6 @@
       100% { transform: translateY(0px); }
     }
 
-    @keyframes rig-pulse {
-      0% { r: 4px; opacity: 0.6; }
-      50% { r: 9px; opacity: 1; }
-      100% { r: 4px; opacity: 0.6; }
-    }
-
     .wave-line {
       stroke-dasharray: 1000;
       animation: pulse-wave 8s linear infinite;
@@ -61,7 +50,6 @@
 
     .node-1 { animation: float-node 4s ease-in-out infinite; }
     .node-2 { animation: float-node 5s ease-in-out infinite 1s; }
-    .pulse-dot { animation: rig-pulse 2.5s ease-in-out infinite; }
   </style>
 
   <!-- Base Background -->
@@ -77,7 +65,7 @@
     <!-- Trajectory Path 2 (Secondary Offset Well) -->
     <path d="M 720 -20 C 800 80, 920 250, 1180 280" fill="none" stroke="#ff9900" stroke-width="2" stroke-dasharray="6,6" opacity="0.7"/>
 
-    <!-- Rig Node Points (Background graphic elements, right side) -->
+    <!-- Rig Node Points -->
     <g class="node-1" transform="translate(950, 175)">
       <rect x="-60" y="-35" width="120" height="70" rx="8" fill="#162447" stroke="#00d4ff" stroke-width="1.5" opacity="0.9"/>
       <text x="0" y="-8" text-anchor="middle" fill="#00d4ff" font-family="sans-serif" font-size="11" font-weight="bold">WITSML DATA</text>
@@ -85,7 +73,7 @@
     </g>
 
     <g class="node-2" transform="translate(800, 100)">
-      <circle cx="0" cy="0" r="6" fill="#00d4ff" class="pulse-dot"/>
+      <circle cx="0" cy="0" r="6" fill="#00d4ff"/>
       <circle cx="0" cy="0" r="14" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
       <line x1="0" y1="0" x2="150" y2="75" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3,3"/>
     </g>
@@ -99,7 +87,7 @@
   <!-- Left Accent Bar -->
   <rect x="0" y="0" width="8" height="340" fill="url(#cyan-glow)" rx="4"/>
 
-  <!-- Drilling Derrick Graphic Graphic Accent (Foreground Left Side Background) -->
+  <!-- Drilling Derrick Graphic Accent -->
   <g transform="translate(80, 45)" opacity="0.12">
     <polygon points="50,0 10,250 90,250" fill="none" stroke="#ffffff" stroke-width="3"/>
     <line x1="50" y1="0" x2="50" y2="250" stroke="#ffffff" stroke-width="2"/>
@@ -110,30 +98,30 @@
     <line x1="80" y1="180" x2="30" y2="110" stroke="#ffffff" stroke-width="1.5"/>
   </g>
 
-  <!-- Text Header Section (Guaranteed Foreground & Unobscured) -->
+  <!-- Text Header Section -->
   <g transform="translate(70, 75)">
     <!-- Top Pill / Badge -->
     <g transform="translate(0, 0)">
-      <rect width="260" height="28" rx="14" fill="rgba(0, 212, 255, 0.12)" stroke="rgba(0, 212, 255, 0.4)" stroke-width="1"/>
-      <text x="14" y="18" class="tag">🛢️ ECOSYSTEM ARCHITECTURE</text>
+      <rect width="240" height="28" rx="14" fill="#00d4ff" fill-opacity="0.12" stroke="#00d4ff" stroke-opacity="0.4" stroke-width="1"/>
+      <text x="14" y="18" class="tag">ECOSYSTEM ARCHITECTURE</text>
     </g>
 
     <!-- Title -->
-    <text x="0" y="78" class="title">Awesome Drilling Operations ⚙️</text>
+    <text x="0" y="78" class="title">Awesome Drilling Operations</text>
 
     <!-- Subtitle -->
-    <text x="0" y="118" class="subtitle">Curated SaaS & Open-Source Tools for Well Planning, Real-Time Monitoring & WITSML</text>
+    <text x="0" y="118" class="subtitle">Curated SaaS &amp; Open-Source Tools for Well Planning, Real-Time Monitoring &amp; WITSML</text>
 
     <!-- Dynamic Specs / Feature Tags -->
     <g transform="translate(0, 155)">
       <rect width="130" height="30" rx="6" fill="#162447" stroke="#2a3b6e" stroke-width="1"/>
-      <text x="15" y="20" fill="#a0aec0" font-family="sans-serif" font-size="12" font-weight="600">📊 Market: $3.44B</text>
+      <text x="15" y="20" fill="#a0aec0" font-family="sans-serif" font-size="12" font-weight="600">Market: $3.44B</text>
 
-      <rect x="142" y="0" width="145" height="30" rx="6" fill="#162447" stroke="#2a3b6e" stroke-width="1"/>
-      <text x="157" y="20" fill="#00d4ff" font-family="sans-serif" font-size="12" font-weight="600">⚡ Trajectory &amp; WITS</text>
+      <rect x="142" y="0" width="165" height="30" rx="6" fill="#162447" stroke="#2a3b6e" stroke-width="1"/>
+      <text x="157" y="20" fill="#00d4ff" font-family="sans-serif" font-size="12" font-weight="600">Trajectory &amp; WITSML</text>
 
-      <rect x="299" y="0" width="140" height="30" rx="6" fill="#162447" stroke="#2a3b6e" stroke-width="1"/>
-      <text x="314" y="20" fill="#ff9900" font-family="sans-serif" font-size="12" font-weight="600">🌐 Real-Time Telemetry</text>
+      <rect x="319" y="0" width="160" height="30" rx="6" fill="#162447" stroke="#2a3b6e" stroke-width="1"/>
+      <text x="334" y="20" fill="#ff9900" font-family="sans-serif" font-size="12" font-weight="600">Real-Time Telemetry</text>
     </g>
   </g>
 </svg>
