@@ -49,9 +49,9 @@ Welcome to the definitive curated catalog of **Drilling Operations Management So
 
 ## 🔓 Open-Source GitHub Projects & Libraries
 
-*Active open-source repositories for well trajectory planning, WITS/WITSML parsing, and subsurface data modeling sorted by GitHub Star count.*
+*Active open-source repositories for well trajectory planning, WITS/WITSML parsing, and subsurface data modeling sorted by GitHub Stars_Count.*
 
-| Repository | GitHub Stars Badge | Description & Core Stack |
+| Repository | GitHub_Stars_Badge | Description & Core Stack |
 | :--- | :--- | :--- |
 | **[segyio](https://github.com/equinor/segyio)** | [![segyio Stars](https://img.shields.io/github/stars/equinor/segyio?style=social&color=white)](https://github.com/equinor/segyio/stargazers) | Fast Python & C library for SEGY seismic and subsurface well trace data processing created by Equinor. |
 | **[welleng](https://github.com/jonnymaserati/welleng)** | [![welleng Stars](https://img.shields.io/github/stars/jonnymaserati/welleng?style=social&color=white)](https://github.com/jonnymaserati/welleng/stargazers) | Python collection of well engineering tools focusing on well trajectory planning, anti-collision analysis, and ISCWSA survey math. |
