@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1128" />
+      <stop offset="50%" stop-color="#101f42" />
+      <stop offset="100%" stop-color="#070b19" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(0, 212, 255, 0.07)" stroke-width="1"/>
+    </pattern>
+
+    <!-- Glowing Accent Gradient -->
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0055ff" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <linearGradient id="orange-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9900" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ff5500" stop-opacity="0.3"/>
+    </linearGradient>
+
+    <!-- Subtle Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 46px; fill: #ffffff; letter-spacing: -0.5px; }
+    .subtitle { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 20px; fill: #a0aec0; letter-spacing: 0.2px; }
+    .tag { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 13px; fill: #00d4ff; letter-spacing: 1px; }
+    
+    /* Subtle Dynamic Animations in background */
+    @keyframes pulse-wave {
+      0% { stroke-dashoffset: 1000; opacity: 0.3; }
+      50% { opacity: 0.8; }
+      100% { stroke-dashoffset: 0; opacity: 0.3; }
+    }
+    
+    @keyframes float-node {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes rig-pulse {
+      0% { r: 4px; opacity: 0.6; }
+      50% { r: 9px; opacity: 1; }
+      100% { r: 4px; opacity: 0.6; }
+    }
+
+    .wave-line {
+      stroke-dasharray: 1000;
+      animation: pulse-wave 8s linear infinite;
+    }
+
+    .node-1 { animation: float-node 4s ease-in-out infinite; }
+    .node-2 { animation: float-node 5s ease-in-out infinite 1s; }
+    .pulse-dot { animation: rig-pulse 2.5s ease-in-out infinite; }
+  </style>
+
+  <!-- Base Background -->
+  <rect width="1200" height="340" fill="url(#bg-grad)" rx="12"/>
+  <rect width="1200" height="340" fill="url(#grid)" rx="12"/>
+
+  <!-- Background Dynamic Curves (Well Trajectory / Telemetry Simulation) -->
+  <g opacity="0.4">
+    <!-- Trajectory Path 1 -->
+    <path d="M 650 -20 C 750 100, 800 180, 1150 220" fill="none" stroke="#00d4ff" stroke-width="3" class="wave-line"/>
+    <path d="M 650 -20 C 750 100, 800 180, 1150 220" fill="none" stroke="#00d4ff" stroke-width="8" opacity="0.15" filter="url(#glow)"/>
+
+    <!-- Trajectory Path 2 (Secondary Offset Well) -->
+    <path d="M 720 -20 C 800 80, 920 250, 1180 280" fill="none" stroke="#ff9900" stroke-width="2" stroke-dasharray="6,6" opacity="0.7"/>
+
+    <!-- Rig Node Points (Background graphic elements, right side) -->
+    <g class="node-1" transform="translate(950, 175)">
+      <rect x="-60" y="-35" width="120" height="70" rx="8" fill="#162447" stroke="#00d4ff" stroke-width="1.5" opacity="0.9"/>
+      <text x="0" y="-8" text-anchor="middle" fill="#00d4ff" font-family="sans-serif" font-size="11" font-weight="bold">WITSML DATA</text>
+      <text x="0" y="14" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="bold">9,420 ft / ROP 120</text>
+    </g>
+
+    <g class="node-2" transform="translate(800, 100)">
+      <circle cx="0" cy="0" r="6" fill="#00d4ff" class="pulse-dot"/>
+      <circle cx="0" cy="0" r="14" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+      <line x1="0" y1="0" x2="150" y2="75" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3,3"/>
+    </g>
+
+    <g class="node-1" transform="translate(1100, 240)">
+      <circle cx="0" cy="0" r="5" fill="#ff9900"/>
+      <text x="12" y="4" fill="#ff9900" font-family="sans-serif" font-size="12" font-weight="bold">BIT TARGET</text>
+    </g>
+  </g>
+
+  <!-- Left Accent Bar -->
+  <rect x="0" y="0" width="8" height="340" fill="url(#cyan-glow)" rx="4"/>
+
+  <!-- Drilling Derrick Graphic Graphic Accent (Foreground Left Side Background) -->
+  <g transform="translate(80, 45)" opacity="0.12">
+    <polygon points="50,0 10,250 90,250" fill="none" stroke="#ffffff" stroke-width="3"/>
+    <line x1="50" y1="0" x2="50" y2="250" stroke="#ffffff" stroke-width="2"/>
+    <line x1="20" y1="180" x2="80" y2="180" stroke="#ffffff" stroke-width="2"/>
+    <line x1="30" y1="110" x2="70" y2="110" stroke="#ffffff" stroke-width="2"/>
+    <line x1="40" y1="50" x2="60" y2="50" stroke="#ffffff" stroke-width="2"/>
+    <line x1="20" y1="180" x2="70" y2="110" stroke="#ffffff" stroke-width="1.5"/>
+    <line x1="80" y1="180" x2="30" y2="110" stroke="#ffffff" stroke-width="1.5"/>
+  </g>
+
+  <!-- Text Header Section (Guaranteed Foreground & Unobscured) -->
+  <g transform="translate(70, 75)">
+    <!-- Top Pill / Badge -->
+    <g transform="translate(0, 0)">
+      <rect width="260" height="28" rx="14" fill="rgba(0, 212, 255, 0.12)" stroke="rgba(0, 212, 255, 0.4)" stroke-width="1"/>
+      <text x="14" y="18" class="tag">🛢️ ECOSYSTEM ARCHITECTURE</text>
+    </g>
+
+    <!-- Title -->
+    <text x="0" y="78" class="title">Awesome Drilling Operations ⚙️</text>
+
+    <!-- Subtitle -->
+    <text x="0" y="118" class="subtitle">Curated SaaS & Open-Source Tools for Well Planning, Real-Time Monitoring & WITSML</text>
+
+    <!-- Dynamic Specs / Feature Tags -->
+    <g transform="translate(0, 155)">
+      <rect width="130" height="30" rx="6" fill="#162447" stroke="#2a3b6e" stroke-width="1"/>
+      <text x="15" y="20" fill="#a0aec0" font-family="sans-serif" font-size="12" font-weight="600">📊 Market: $3.44B</text>
+
+      <rect x="142" y="0" width="145" height="30" rx="6" fill="#162447" stroke="#2a3b6e" stroke-width="1"/>
+      <text x="157" y="20" fill="#00d4ff" font-family="sans-serif" font-size="12" font-weight="600">⚡ Trajectory &amp; WITS</text>
+
+      <rect x="299" y="0" width="140" height="30" rx="6" fill="#162447" stroke="#2a3b6e" stroke-width="1"/>
+      <text x="314" y="20" fill="#ff9900" font-family="sans-serif" font-size="12" font-weight="600">🌐 Real-Time Telemetry</text>
+    </g>
+  </g>
+</svg>
