@@ -49,7 +49,7 @@ Welcome to the definitive curated catalog of **Drilling Operations Management So
 
 ## 🔓 Open-Source GitHub Projects & Libraries
 
-*Active open-source repositories for well trajectory planning, WITS/WITSML parsing, and subsurface data modeling sorted by GitHub Stars_Count.*
+*Active open-source repositories for well trajectory planning, WITS/WITSML parsing, and subsurface data modeling sorted by GitHub_Stars_Count.*
 
 | Repository | GitHub_Stars_Badge | Description & Core Stack |
 | :--- | :--- | :--- |
